@@ -1,0 +1,476 @@
+/*
+ Theme Name:   Twenty Sixteen Child
+ Theme URI:    http://example.com/twenty-sixteen-child/
+ Description:  Twenty Sixteen Child Theme
+ Author:       Sheena Gygax
+ Author URI:   http://example.com
+ Template:     twentysixteen
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  twenty-sixteen-child
+*/
+/* line 4, scss/neat/grid/_box-sizing.scss */
+html {
+  box-sizing: border-box;
+}
+
+/* line 9, scss/neat/grid/_box-sizing.scss */
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+/* line 1, scss/base/_buttons.scss */
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  appearance: none;
+  background-color: #1565c0;
+  border: 0;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1.5em;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+/* line 22, scss/base/_buttons.scss */
+button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus {
+  background-color: #11519a;
+  color: #fff;
+}
+/* line 28, scss/base/_buttons.scss */
+button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+/* line 32, scss/base/_buttons.scss */
+button:disabled:hover, input[type="button"]:disabled:hover, input[type="reset"]:disabled:hover, input[type="submit"]:disabled:hover {
+  background-color: #1565c0;
+}
+
+/* line 1, scss/base/_forms.scss */
+fieldset {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8, scss/base/_forms.scss */
+legend {
+  font-weight: 600;
+  margin-bottom: 0.375em;
+  padding: 0;
+}
+
+/* line 14, scss/base/_forms.scss */
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.375em;
+}
+
+/* line 20, scss/base/_forms.scss */
+input,
+select,
+textarea {
+  display: block;
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 1em;
+}
+
+/* line 28, scss/base/_forms.scss */
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea {
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  margin-bottom: 0.75em;
+  padding: 0.5em;
+  transition: border-color 150ms ease;
+  width: 100%;
+}
+/* line 40, scss/base/_forms.scss */
+input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, input:not([type]):hover, textarea:hover {
+  border-color: #b1b1b1;
+}
+/* line 44, scss/base/_forms.scss */
+input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus {
+  border-color: #1565c0;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(18, 89, 169, 0.7);
+  outline: none;
+}
+/* line 50, scss/base/_forms.scss */
+input[type="color"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="email"]:disabled, input[type="month"]:disabled, input[type="number"]:disabled, input[type="password"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="text"]:disabled, input[type="time"]:disabled, input[type="url"]:disabled, input[type="week"]:disabled, input:not([type]):disabled, textarea:disabled {
+  background-color: #f2f2f2;
+  cursor: not-allowed;
+}
+/* line 54, scss/base/_forms.scss */
+input[type="color"]:disabled:hover, input[type="date"]:disabled:hover, input[type="datetime"]:disabled:hover, input[type="datetime-local"]:disabled:hover, input[type="email"]:disabled:hover, input[type="month"]:disabled:hover, input[type="number"]:disabled:hover, input[type="password"]:disabled:hover, input[type="search"]:disabled:hover, input[type="tel"]:disabled:hover, input[type="text"]:disabled:hover, input[type="time"]:disabled:hover, input[type="url"]:disabled:hover, input[type="week"]:disabled:hover, input:not([type]):disabled:hover, textarea:disabled:hover {
+  border: 1px solid #ddd;
+}
+/* line 59, scss/base/_forms.scss */
+input[type="color"]::placeholder, input[type="date"]::placeholder, input[type="datetime"]::placeholder, input[type="datetime-local"]::placeholder, input[type="email"]::placeholder, input[type="month"]::placeholder, input[type="number"]::placeholder, input[type="password"]::placeholder, input[type="search"]::placeholder, input[type="tel"]::placeholder, input[type="text"]::placeholder, input[type="time"]::placeholder, input[type="url"]::placeholder, input[type="week"]::placeholder, input:not([type])::placeholder, textarea::placeholder {
+  color: #858585;
+}
+
+/* line 64, scss/base/_forms.scss */
+textarea {
+  resize: vertical;
+}
+
+/* line 68, scss/base/_forms.scss */
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-right: 0.375em;
+}
+
+/* line 74, scss/base/_forms.scss */
+[type="file"] {
+  margin-bottom: 0.75em;
+  width: 100%;
+}
+
+/* line 79, scss/base/_forms.scss */
+select {
+  margin-bottom: 0.75em;
+  width: 100%;
+}
+
+/* line 1, scss/base/_layout.scss */
+html {
+  box-sizing: border-box;
+}
+
+/* line 5, scss/base/_layout.scss */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* line 11, scss/base/_layout.scss */
+html,
+body {
+  height: 100%;
+}
+
+/* line 1, scss/base/_lists.scss */
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8, scss/base/_lists.scss */
+dl {
+  margin: 0;
+}
+
+/* line 12, scss/base/_lists.scss */
+dt {
+  font-weight: 600;
+  margin: 0;
+}
+
+/* line 17, scss/base/_lists.scss */
+dd {
+  margin: 0;
+}
+
+/* line 1, scss/base/_media.scss */
+figure {
+  margin: 0;
+}
+
+/* line 5, scss/base/_media.scss */
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+/* line 1, scss/base/_tables.scss */
+table {
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+/* line 8, scss/base/_tables.scss */
+th {
+  border-bottom: 1px solid #a6a6a6;
+  font-weight: 600;
+  padding: 0.75em 0;
+  text-align: left;
+}
+
+/* line 15, scss/base/_tables.scss */
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 0.75em 0;
+}
+
+/* line 20, scss/base/_tables.scss */
+tr,
+td,
+th {
+  vertical-align: middle;
+}
+
+/* line 1, scss/base/_typography.scss */
+body {
+  color: #333;
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* line 8, scss/base/_typography.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 1.333em;
+  line-height: 1.2;
+  margin: 0 0 0.75em;
+}
+
+/* line 20, scss/base/_typography.scss */
+p {
+  margin: 0 0 0.75em;
+}
+
+/* line 24, scss/base/_typography.scss */
+a {
+  color: #1565c0;
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+/* line 29, scss/base/_typography.scss */
+a:active, a:focus, a:hover {
+  color: #104c90;
+}
+
+/* line 36, scss/base/_typography.scss */
+hr {
+  border-bottom: 1px solid #ddd;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: 1.5em 0;
+}
+
+/* line 1, scss/partials/_navigation.scss */
+body, button, input, select, textarea {
+  font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+  color: #43464B;
+}
+
+/* line 6, scss/partials/_navigation.scss */
+h1, h2, h3, h4, h5, h6,
+.entry-title,
+.main-navigation {
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  text-transform: uppercase;
+}
+
+/* line 13, scss/partials/_navigation.scss */
+.main-navigation .primary-menu > li {
+  margin: 0 0.875em;
+}
+
+/* line 16, scss/partials/_navigation.scss */
+.main-navigation a {
+  font-size: 0.9rem;
+  color: #43464B;
+  padding: 0.65625em 0;
+}
+
+/* line 22, scss/partials/_navigation.scss */
+.main-navigation a:after {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #74877F;
+  content: "";
+  transition: width 0.2s;
+}
+
+/* line 34, scss/partials/_navigation.scss */
+.main-navigation li:hover > a,
+.main-navigation li.focus > a,
+.main-navigation a:hover,
+.main-navigation li.current_page_item a {
+  color: #74877F;
+}
+
+/* line 41, scss/partials/_navigation.scss */
+.main-navigation a:hover:after {
+  width: 100%;
+}
+
+/* -----------------------------------------------------------------------------
+
+  Components - Shape
+
+----------------------------------------------------------------------------- */
+/* line 4, scss/partials/_structure.scss */
+body {
+  margin: 0;
+  background: #fff;
+}
+/* line 7, scss/partials/_structure.scss */
+body .site {
+  margin: 0;
+}
+/* line 10, scss/partials/_structure.scss */
+body .site-content {
+  padding: 0;
+}
+/* line 13, scss/partials/_structure.scss */
+body .site-inner {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* line 20, scss/partials/_structure.scss */
+#main {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 25px;
+}
+/* line 22, scss/partials/_structure.scss */
+#main h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+/* line 20, scss/neat/mixins/_clearfix.scss */
+#main::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 20, scss/neat/mixins/_clearfix.scss */
+#main section::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+@media screen and (min-width: 699px) {
+  /* line 30, scss/partials/_structure.scss */
+  #main section {
+    float: left;
+    display: block;
+    margin-right: 4.34783%;
+    width: 26.95652%;
+  }
+  /* line 89, scss/neat/grid/_span-columns.scss */
+  #main section:last-child {
+    margin-right: 0;
+  }
+}
+
+/* line 40, scss/partials/_structure.scss */
+section.contact {
+  background-color: #d66253;
+  min-height: 250px;
+  width: 100%;
+  padding: 25px 0;
+}
+/* line 46, scss/partials/_structure.scss */
+section.contact h2 {
+  text-align: center;
+  font: 400 1.25rem 'Pacifico', Helvetica, sans-serif;
+  color: #fff;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1), 7px 7px 0px rgba(0, 0, 0, 0.05);
+}
+/* line 53, scss/partials/_structure.scss */
+section.contact button {
+  margin: 0 auto;
+  display: block;
+  background-color: #BB4030;
+  color: #fff;
+}
+
+/* line 62, scss/partials/_structure.scss */
+.no-sidebar .entry-header,
+.no-sidebar .entry-content {
+  margin: 0;
+}
+
+/* line 68, scss/partials/_structure.scss */
+footer {
+  background: #43464B;
+}
+
+@media screen and (min-width: 699px) {
+  /* line 73, scss/partials/_structure.scss */
+  #main {
+    padding: 0;
+  }
+  /* line 75, scss/partials/_structure.scss */
+  #main section {
+    float: left;
+    display: block;
+    margin-right: 4.34783%;
+    width: 26.95652%;
+  }
+  /* line 89, scss/neat/grid/_span-columns.scss */
+  #main section:last-child {
+    margin-right: 0;
+  }
+}
+/*!
+ * Ripple
+ */
+/* line 86, scss/partials/_structure.scss */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+/* line 90, scss/partials/_structure.scss */
+.ripple:after {
+  content: "";
+  background: rgba(255, 255, 255, 0.3);
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  padding-top: 240%;
+  padding-left: 240%;
+  margin-top: -120%;
+  margin-left: -120%;
+  opacity: 0;
+  transition: all 1s;
+}
+/* line 104, scss/partials/_structure.scss */
+.ripple:active:after {
+  padding-top: 0;
+  padding-left: 0;
+  margin-top: 0;
+  margin-left: 0;
+  opacity: 1;
+  transition: 0s;
+}

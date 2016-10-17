@@ -1,0 +1,27 @@
+@import "neat/neat-helpers";
+// Neat Overrides
+$column: 70px;
+$gutter: 50px;
+$grid-columns: 10;
+$max-width: 1200px;
+
+// Neat Breakpoints
+$medium-screen: em(640);
+$large-screen: em(860);
+
+$medium-screen-up: new-breakpoint(min-width $medium-screen 4);
+$large-screen-up: new-breakpoint(min-width $large-screen 8);
+
+
+// -------------------------------------
+//  Breakpoints
+// -------------------------------------
+
+$max-small: 699px;
+$min-small: 700px;
+$max-medium: 979px;
+$min-medium: 980px;
+$max-large: 1199px;
+$min-large: 1200px;
+$max-xlarge: 1599px;
+$min-xlarge: 1600px;

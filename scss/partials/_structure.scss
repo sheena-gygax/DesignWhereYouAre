@@ -1,0 +1,113 @@
+// #E2D9C7 gold-grey
+// #BB4030 terracotta
+
+body {
+  margin: 0;
+  background: #fff;
+  .site {
+    margin: 0;
+  }
+  .site-content {
+    padding: 0;
+  }
+  .site-inner {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+
+#main {
+  //rip this out when getting posts on home
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  @include outer-container;
+  padding: 0 25px;
+
+  section {
+    @include clearfix;
+
+    @include media($max-small){
+      @include span-columns(3);
+    }
+  }
+
+}
+
+section.contact{
+  background-color: #d66253;
+  min-height: 250px;
+  width: 100%;
+  padding: 25px 0;
+
+  h2 {
+    text-align: center;
+    font: 400 1.25rem 'Pacifico', Helvetica, sans-serif;
+    color: #fff;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
+  }
+
+  button {
+    margin: 0 auto;
+    display: block;
+    background-color: #BB4030;
+    color: #fff;
+  }
+}
+
+.no-sidebar {
+  .entry-header,
+  .entry-content {
+    margin: 0;
+  }
+}
+
+footer {
+  background: #43464B;
+}
+
+ @include media($max-small){
+  #main{
+    padding: 0;
+    section {
+      @include span-columns(3);
+    }
+  }
+}
+
+
+
+/*!
+ * Ripple
+ */
+.ripple {
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    content: "";
+    background: rgba(255,255,255,0.3);
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    padding-top: 240%;
+    padding-left: 240%;
+    margin-top: -120%;
+    margin-left: -120%;
+    opacity: 0;
+    transition: all 1s;
+  }
+
+  &:active:after {
+    padding-top: 0;
+    padding-left: 0;
+    margin-top: 0;
+    margin-left: 0;
+    opacity: 1;
+    transition: 0s;
+  }
+
+}
