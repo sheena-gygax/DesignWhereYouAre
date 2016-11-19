@@ -1,4 +1,4 @@
-body, button, input, select, textarea {
+#74877F#74877Fbody, button, input, select, textarea {
   font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
   color: #43464B;
 }
@@ -26,7 +26,7 @@ h1,h2,h3,h4,h5,h6,
   bottom: 0;
   width: 0;
   height: 2px;
-  background-color: #74877F;
+  background-color: $grey-blue;
   content: "";
   transition: width 0.2s;
 }
@@ -35,12 +35,40 @@ h1,h2,h3,h4,h5,h6,
 .main-navigation li.focus > a,
 .main-navigation a:hover,
 .main-navigation li.current_page_item a {
-  color: #74877F;
+  color: $grey-blue;
 }
 
 .main-navigation a:hover:after {
   width:100%;
 }
+
+@media screen and (max-width: ($max-medium)){
+  .menu-toggle {
+    display: none;
+  }
+}
+
+// @media screen and (max-width: ($max-medium)){
+//   .shiftnav {
+//     display: none !important;
+//   }
+// }
+
+/* -----------------------------------------------------------------------------
+
+  ShiftNav
+
+----------------------------------------------------------------------------- */
+.shiftnav {
+  &:after {
+    box-shadow: 0 0 15px rgba(0,0,0,0.2)!important;
+  }
+  &.shiftnav-skin-light {
+    background: #ffffff !important;
+    color: $text-dark !important;
+  }
+}
+
 
 /* -----------------------------------------------------------------------------
 

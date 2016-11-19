@@ -40,3 +40,8 @@ hr {
   border-top: 0;
   margin: $base-spacing 0;
 }
+
+.entry-title a:hover,
+.entry-title a:focus{
+  color: #000;
+}

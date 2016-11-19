@@ -1,9 +1,38 @@
 @import "neat/neat-helpers";
-// Neat Overrides
-$column: 70px;
-$gutter: 50px;
+
+$visual-grid: true;
+$vis­ual­-gr­id-­color: purple;
+$vis­ual­-gr­id-­index: front;
+
+
+// ------------------------------------------------------------
+// Override Neat's grid settings
+// ------------------------------------------------------------
+
+$column: golden-ratio(1em, 3) !default; // Column width
+$gutter: golden-ratio(1em, 3) !default; // Gutter between each two columns
+
+// ------------------------------------------------------------
+// Set Bourbon's flex-grid variables to match what Neat is doing
+// http://bourbon.io/docs/#flex-grid
+// ------------------------------------------------------------
+
+$fg-column: $column;
+$fg-gutter: $gutter;
+
+// ------------------------------------------------------------
+// Omega Reset
+// ------------------------------------------------------------
+
+@mixin omega-reset($nth) {
+  &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+  &:nth-child(#{$nth}+1) { clear: none }
+}
+
+
 $grid-columns: 10;
 $max-width: 1200px;
+
 
 // Neat Breakpoints
 $medium-screen: em(640);
@@ -12,16 +41,3 @@ $large-screen: em(860);
 $medium-screen-up: new-breakpoint(min-width $medium-screen 4);
 $large-screen-up: new-breakpoint(min-width $large-screen 8);
 
-
-// -------------------------------------
-//  Breakpoints
-// -------------------------------------
-
-$max-small: 699px;
-$min-small: 700px;
-$max-medium: 979px;
-$min-medium: 980px;
-$max-large: 1199px;
-$min-large: 1200px;
-$max-xlarge: 1599px;
-$min-xlarge: 1600px;

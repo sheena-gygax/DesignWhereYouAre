@@ -1,10 +1,18 @@
 // Breakpoints
-$medium-screen: 600px;
-$large-screen: 900px;
+$max-small: 699px;
+$min-small: 700px;
+$max-medium: 979px;
+$min-medium: 980px;
+$max-large: 1199px;
+$min-large: 1200px;
+$max-xlarge: 1599px;
+$min-xlarge: 1600px;
 
 // Typography
 $base-font-family: Arial,Helvetica Neue,Helvetica,sans-serif;;
 $heading-font-family: $base-font-family;
+$text-dark: #43464B;
+$grey-blue: #74877F;
 
 // Font Sizes
 $base-font-size: 1em;
@@ -44,3 +52,6 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $l
 // Animations
 $base-duration: 150ms;
 $base-timing: ease;
+
+//Headers
+$h1: 3rem;

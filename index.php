@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file
+ * Template Name: Home
  *
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
@@ -19,18 +19,22 @@ get_header(); ?>
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
 
-      <?php 
-        $args = array( 
-          // Sheena set the category ID Here
-         'cat' => '2'
+      <?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+
+      <?php
+        $args = array(
+         'cat' => '4'
         );
         $the_query = new WP_Query( $args );
       ?>
 
       <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-      <h1><?php the_title() ;?></h1>      
-      <?php the_content(); ?>
+
+      <section>
+        <h2><?php the_title() ;?></h2>
+        <div><?php the_content(); ?></div>
+      </section>
 
       <?php endwhile; else: ?>
 
@@ -40,7 +44,14 @@ get_header(); ?>
 
       <?php wp_reset_query(); ?>
 
+
+
+
     </main><!-- .site-main -->
+
+<!--   <section class="contact">
+    <button class="ripple">Contact</button>
+  </section> -->
   </div><!-- .content-area -->
 
 <?php get_sidebar(); ?>
