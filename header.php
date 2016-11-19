@@ -75,8 +75,7 @@
         <?php endif; ?>
       </div><!-- .site-header-main -->
 
-      
-      <?php if ( get_header_image() ) : ?>
+      <?php if ( get_header_image() && is_front_page() ) : ?>
         <?php
           /**
            * Filter the default twentysixteen custom header sizes attribute.

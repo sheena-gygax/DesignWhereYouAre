@@ -406,41 +406,44 @@ h1, h2, h3, h4, h5, h6,
 ----------------------------------------------------------------------------- */
 /* line 1, scss/partials/_structure.scss */
 body {
+  position: relative;
   margin: 0;
   background: #333;
 }
-/* line 4, scss/partials/_structure.scss */
+/* line 5, scss/partials/_structure.scss */
 body .site {
   margin: 0;
 }
-/* line 7, scss/partials/_structure.scss */
+/* line 8, scss/partials/_structure.scss */
 body .site-content {
   padding: 0;
 }
-/* line 10, scss/partials/_structure.scss */
+/* line 11, scss/partials/_structure.scss */
 body .site-inner {
   width: 100%;
   max-width: 100%;
 }
 
-/* line 16, scss/partials/_structure.scss */
+/* line 17, scss/partials/_structure.scss */
 h1 {
   font-size: 3rem;
+}
+
+/* line 21, scss/partials/_structure.scss */
+.site-header {
+  padding: 0;
+}
+
+/* line 25, scss/partials/_structure.scss */
+header {
+  font-size: 2rem;
+  text-align: center;
 }
 
 /**********************
  * Home Page
  **********************/
-/* line 25, scss/partials/_structure.scss */
-.home .site-header {
-  padding: 0;
-}
-/* line 29, scss/partials/_structure.scss */
-.home header {
-  font-size: 2rem;
-  text-align: center;
-}
-/* line 34, scss/partials/_structure.scss */
+/* line 35, scss/partials/_structure.scss */
 .home .header-image {
   background-image: url(/wp-content/uploads/2016/10/cropped-residential_vancouver_bc_9.jpg);
   background-size: cover;
@@ -452,33 +455,16 @@ h1 {
   padding: 150px 0;
   margin: 0;
 }
-/* line 44, scss/partials/_structure.scss */
+/* line 45, scss/partials/_structure.scss */
 .home .header-image a {
   text-indent: -9999px;
 }
-/* line 49, scss/partials/_structure.scss */
+/* line 50, scss/partials/_structure.scss */
 .home #main {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding: 0 25px;
-}
-/* line 50, scss/partials/_structure.scss */
-.home #main .entry-header {
-  display: none;
-}
-/* line 54, scss/partials/_structure.scss */
-.home #main h1 {
-  text-align: center;
-}
-/* line 59, scss/partials/_structure.scss */
-.home #main .post-thumbnail {
-  margin-bottom: 0;
-}
-/* line 61, scss/partials/_structure.scss */
-.home #main .post-thumbnail img {
-  width: auto;
-  max-width: 100%;
 }
 /* line 20, scss/neat/mixins/_clearfix.scss */
 .home #main::after {
@@ -486,15 +472,23 @@ h1 {
   content: "";
   display: block;
 }
+/* line 53, scss/partials/_structure.scss */
+.home #main .entry-header {
+  display: none;
+}
+/* line 57, scss/partials/_structure.scss */
+.home #main h1 {
+  text-align: center;
+}
 
-/* line 72, scss/partials/_structure.scss */
+/* line 63, scss/partials/_structure.scss */
 section.contact {
   background-color: #d66253;
   min-height: 100px;
   width: 100%;
   padding: 25px 0;
 }
-/* line 78, scss/partials/_structure.scss */
+/* line 69, scss/partials/_structure.scss */
 section.contact button {
   margin: 0 auto;
   display: block;
@@ -503,37 +497,64 @@ section.contact button {
   outline: none;
 }
 
-/* line 88, scss/partials/_structure.scss */
+/**********************
+* Interior Page
+**********************/
+/* line 82, scss/partials/_structure.scss */
+.page-template:not(.home) .site-content {
+  float: left;
+  display: block;
+  margin-right: 2.84259%;
+  width: 79.43148%;
+  margin-left: 20.56852%;
+}
+/* line 89, scss/neat/grid/_span-columns.scss */
+.page-template:not(.home) .site-content:last-child {
+  margin-right: 0;
+}
+
+/**********************
+* Structure
+**********************/
+/* line 93, scss/partials/_structure.scss */
 .no-sidebar .entry-content {
   margin: 0;
 }
 
-/* line 93, scss/partials/_structure.scss */
+/* line 98, scss/partials/_structure.scss */
 .site-footer {
   background: #333;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 95px;
 }
 
+/**********************
+* Media Queries
+**********************/
+@media screen and (min-width: 980px) {
+  /* line 111, scss/partials/_structure.scss */
+  .site-header-main {
+    height: 90px;
+  }
+}
 @media screen and (min-width: 699px) {
-  /* line 98, scss/partials/_structure.scss */
+  /* line 117, scss/partials/_structure.scss */
   .site-header-main {
     margin: 0 100px;
   }
 
-  /* line 102, scss/partials/_structure.scss */
+  /* line 121, scss/partials/_structure.scss */
   .site-header-menu {
     margin: 0.85em 0;
   }
 
-  /* line 109, scss/partials/_structure.scss */
-  .home .post-thumbnail img {
-    height: 200px;
-  }
-
-  /* line 114, scss/partials/_structure.scss */
+  /* line 125, scss/partials/_structure.scss */
   #main {
     padding: 0;
   }
-  /* line 116, scss/partials/_structure.scss */
+  /* line 127, scss/partials/_structure.scss */
   #main section {
     float: left;
     display: block;
@@ -545,7 +566,7 @@ section.contact button {
     margin-right: 0;
   }
 
-  /* line 120, scss/partials/_structure.scss */
+  /* line 131, scss/partials/_structure.scss */
   .site-main > article {
     margin-bottom: 3em;
   }
@@ -553,12 +574,12 @@ section.contact button {
 /**********************
  * Hover Effects
  **********************/
-/* line 130, scss/partials/_structure.scss */
+/* line 139, scss/partials/_structure.scss */
 .ripple {
   position: relative;
   overflow: hidden;
 }
-/* line 134, scss/partials/_structure.scss */
+/* line 143, scss/partials/_structure.scss */
 .ripple:after {
   content: "";
   background: rgba(255, 255, 255, 0.3);
@@ -572,7 +593,7 @@ section.contact button {
   opacity: 0;
   transition: all 1s;
 }
-/* line 148, scss/partials/_structure.scss */
+/* line 157, scss/partials/_structure.scss */
 .ripple:active:after {
   padding-top: 0;
   padding-left: 0;
