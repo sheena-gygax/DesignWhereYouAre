@@ -17,6 +17,14 @@ h6 {
   margin: 0 0 $small-spacing;
 }
 
+.post-navigation .post-title { 
+  font-family: $heading-font-family; 
+  color: $salty-dog;
+  &:hover{
+    color: $temple-star;
+  }
+}
+
 p {
   margin: 0 0 $small-spacing;
 }

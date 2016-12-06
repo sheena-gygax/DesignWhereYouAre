@@ -89,9 +89,11 @@
           $custom_header_sizes = apply_filters( 'twentysixteen_custom_header_sizes', '(max-width: 709px) 85vw, (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px' );
         ?>
         <div class="header-image">
-          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-            <img style="background-image:<?php header_image(); ?>"  sizes="<?php echo esc_attr( $custom_header_sizes ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-          </a>
+          <img style="background-image:url('<?php header_image(); ?>'); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; width: 100%; max-width: 100%; max-height: 100%; height: 20vw;"  sizes="<?php echo esc_attr( $custom_header_sizes ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+          <div class="corner-bottom-left animated fadeInLeft"></div>
+          <div class="corner-top-left animated fadeInLeft"></div>
+          <div class="corner-top-right animated fadeInRight"></div>
+          <div class="corner-bottom-right animated fadeInRight"></div>
         </div><!-- .header-image -->
       <?php endif; // End header image check. ?>
     </header><!-- .site-header -->

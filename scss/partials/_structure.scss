@@ -11,12 +11,17 @@ body {
   .site-inner {
     width: 100%;
     max-width: 100%;
+    min-height: 500px;
   }
 }
+
+h1,h2,h3,h4,h5,h6 { color: $foggy-day;}
 
 h1 {
   font-size: $h1;
 }
+
+a { color: $salty-dog; }
 
 .site-header {
   padding: 0;
@@ -27,23 +32,62 @@ header {
   text-align: center;
 }
 
+ul { list-style: square; }
+
 /**********************
  * Home Page
  **********************/
 
 .home {
+  header{ position: relative; }
   .header-image {
-    background-image: url(/wp-content/uploads/2016/10/cropped-residential_vancouver_bc_9.jpg);
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    max-width: 100%;
-    max-height: 100%;
-    height: 10vw;
-    padding: 150px 0;
+    position: relative;
+    overflow: hidden;
     margin: 0;
-    a {
+    img {
       text-indent: -9999px;
+    }
+    .corner-bottom-left{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 200vh 0 0 200vh;
+      border-color: transparent transparent transparent rgba($temple-star, .65);
+    }
+    .corner-top-left{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 100vh 100vh 0 0;
+      opacity: 0;
+      border-color: rgba($water-scope, .65) transparent transparent;
+    }
+    .corner-top-right{
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 0;
+      height: 0;
+      opacity: 0;
+      border-style: solid;
+      border-width: 0 150vh 150vh 0;
+      border-color: transparent rgba($foxy, .65) transparent transparent;
+    }
+    .corner-bottom-right{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 100vh 100vh;
+      border-color: transparent transparent rgba($sw,.65);
     }
   }
 
@@ -78,10 +122,44 @@ section.contact{
 /**********************
 * Interior Page
 **********************/
-.page-template:not(.home){
-  .site-content{
-    @include span-columns(8);
-    @include shift(2);
+.single-post{
+  main{
+    @include outer-container;
+  }
+}
+
+body.page {
+  #content{
+    @include outer-container;
+  }
+  .content {
+    @include span-columns(12);
+    @include clearfix;
+  }
+}
+
+body.no-sidebar{
+  article:not(.type-page) .entry-content {
+    &.custom {
+      @include span-columns(8);
+      @include clearfix;
+    }
+  }
+}
+
+body.page-template-archive{
+  #content{
+    @include outer-container;
+  }
+  .content{
+    @include span-columns(12);
+    @include clearfix;
+  }
+}
+
+.post-hand-rendered-drawings {
+  .tile {
+     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   }
 }
 
@@ -95,23 +173,33 @@ section.contact{
   }
 }
 
-.site-footer {
-  background: $dark-gray;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  min-height: 95px;
-}
-
 /**********************
 * Media Queries
 **********************/
 
-@include media($min-medium){
+@include media(max-width $max-medium){
+  body.page-template-archive{
+    .post {
+      @include span-columns(4 of 12);
+      @include shift(1.25);
+      @include omega(2n);
+    }
+  }
+}
+
+@include media(min-width $min-medium){
   .site-header-main{
     height: 90px;
   }
+
+  body.page-template-archive{
+    .post {
+      @include span-columns(4 of 12);
+      @include omega(3n);
+    }
+  }
 }
+
 
  @include media($max-small){
   .site-header-main {
@@ -133,9 +221,22 @@ section.contact{
   }
 }
 
+@include media(max-width $max-small){
+  #shiftnav-toggle-main a {
+    font-size: 1em !important;
+  }
+
+  body.page-template-archive{
+    .content { @include span-columns(8); }
+    .post {
+      @include span-columns(8);
+    }
+  }
+}
+
 /**********************
- * Hover Effects
- **********************/
+* Hover Effects
+**********************/
 .ripple {
   position: relative;
   overflow: hidden;
@@ -163,4 +264,56 @@ section.contact{
     transition: 0s;
   }
 
+}
+
+/**********************
+* Animations
+**********************/
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
+
+@keyframes fadeInRight {
+ 0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInLeft {
+ 0% {
+        opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
 }

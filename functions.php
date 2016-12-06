@@ -35,4 +35,23 @@ function theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
 
+function add_slug_body_class( $classes ) {
+  global $post;
+
+  if ( isset( $post ) ) {
+    $classes[] = $post->post_type . '-' . $post->post_name;
+  }
+
+  return $classes;
+}
+
+add_filter( 'body_class', 'add_slug_body_class' );
+
+function custom_thumbnail() {
+  add_theme_support( 'post-thumbnails' );
+  add_image_size( 'category-thumb', 350, 350, true ); // (cropped)
+}
+
+add_action( 'after_setup_theme', 'custom_thumbnail' );
+
 ?>
