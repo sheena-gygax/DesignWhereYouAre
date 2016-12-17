@@ -17,6 +17,11 @@ h6 {
   margin: 0 0 $small-spacing;
 }
 
+header.entry-header {
+  text-align: left;
+  margin: 0;
+}
+
 .post-navigation .post-title { 
   font-family: $heading-font-family; 
   color: $salty-dog;

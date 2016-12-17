@@ -136,6 +136,18 @@ body.page {
     @include span-columns(12);
     @include clearfix;
   }
+  &.no-sidebar .entry-header{
+    margin: 0;
+  }
+  .entry-content{
+    .content-left {
+      @include span-columns(3);
+    }
+    .content-right {
+      @include span-columns(7);
+      @include omega();
+    }
+  }
 }
 
 body.no-sidebar{
@@ -149,11 +161,47 @@ body.no-sidebar{
 
 body.page-template-archive{
   #content{
-    @include outer-container;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    box-lines: multiple;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
   }
-  .content{
-    @include span-columns(12);
-    @include clearfix;
+  .post{
+    padding-right: 10px;
+  }
+  h2{
+    font-size: 1.25em;
+    padding: 10px;
+    position: relative;
+    padding: 10px;
+    background: rgba($water-scope, .65);
+    overflow: hidden;
+  }
+  .corner-bottom-left{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20vh 0 0 20vh;
+    border-color: transparent transparent transparent rgba($temple-star, .65);
   }
 }
 
@@ -161,6 +209,10 @@ body.page-template-archive{
   .tile {
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   }
+}
+
+.sfsiplus_footerLnk{
+  display: none;
 }
 
 /**********************
@@ -179,11 +231,11 @@ body.page-template-archive{
 
 @include media(max-width $max-medium){
   body.page-template-archive{
-    .post {
-      @include span-columns(4 of 12);
-      @include shift(1.25);
-      @include omega(2n);
-    }
+    // .post {
+    //   @include span-columns(4 of 12);
+    //   @include shift(1.25);
+    //   @include omega(2n);
+    // }
   }
 }
 
@@ -192,12 +244,30 @@ body.page-template-archive{
     height: 90px;
   }
 
-  body.page-template-archive{
-    .post {
-      @include span-columns(4 of 12);
-      @include omega(3n);
-    }
-  }
+  // body.page-template-archive{
+  //   .post {
+  //     position: relative;
+  //     @include span-columns(4 of 12);
+  //     @include omega(3n);
+  //     h2{
+  //       position: relative;
+  //       width: 350px;
+  //       padding: 10px;
+  //       background: rgba($water-scope, .65);
+  //       overflow: hidden;
+  //     }
+  //     .corner-bottom-left{
+  //       position: absolute;
+  //       left: 0;
+  //       bottom: 0;
+  //       width: 0;
+  //       height: 0;
+  //       border-style: solid;
+  //       border-width: 20vh 0 0 20vh;
+  //       border-color: transparent transparent transparent rgba($temple-star, .65);
+  //     }
+  //   }
+  // }
 }
 
 

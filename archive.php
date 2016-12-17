@@ -27,7 +27,9 @@ get_header(); ?>
 	    			</a>
 					<?php endif; ?>
 				</div>
-				<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h2>
+				<h2>
+					<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
+					<div class="corner-bottom-left"></div></h2>
 			</div>
 
 		<?php endwhile; ?>

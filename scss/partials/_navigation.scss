@@ -33,26 +33,33 @@ h1,h2,h3,h4,h5,h6,
 
 .main-navigation li:hover > a,
 .main-navigation li.focus > a,
-.main-navigation a:hover,
+.main-navigation > a:hover,
 .main-navigation li.current_page_item a {
   color: $grey-blue;
+}
+.main-navigation .menu-item-has-children > a {
+  padding-right: 0;
+}
+
+.main-navigation .menu-item-has-children > a:after {
+  content: none;
+  background-color: transparent;
+}
+
+.main-navigation .menu-item-has-children .sub-menu a:hover:after{
+  background-color: transparent;
 }
 
 .main-navigation a:hover:after {
   width:100%;
 }
 
+
 @media screen and (max-width: ($max-medium)){
   .menu-toggle {
     display: none;
   }
 }
-
-// @media screen and (max-width: ($max-medium)){
-//   .shiftnav {
-//     display: none !important;
-//   }
-// }
 
 /* -----------------------------------------------------------------------------
 
@@ -69,56 +76,3 @@ h1,h2,h3,h4,h5,h6,
   }
 }
 
-
-/* -----------------------------------------------------------------------------
-
-  Components - Shape
-
------------------------------------------------------------------------------ */
-// .Shape {
-//   position: absolute;
-//   bottom:15%;
-//   left:0;
-//   display: block;
-//   margin-bottom: 1.7rem;
-//   width: 18rem;
-//   height: 18rem;
-//   background-color: #935143;
-// }
-
-// @media (min-width: 480px) {
-//   .Shape {
-//     width: 24rem;
-//     height: 24rem;
-//   }
-// }
-
-// .Shape--left {
-//   float: left;
-//   margin-right: 4.45rem;
-// }
-
-// .Shape--right {
-//   float: right;
-//   margin-left: 4.45rem;
-// }
-
-// .Shape--circle {
-//   border-radius: 50%;
-//   -webkit-shape-outside: circle();
-//           shape-outside: circle();
-// }
-
-// .Shape--triangle {
-//   -webkit-clip-path: polygon(100% 50%, 0% 100%, 0% 0%);
-//           clip-path: polygon(100% 50%, 0% 100%, 0% 0%);
-//   -webkit-shape-outside: polygon(100% 50%, 0% 100%, 0% 0%);
-//           shape-outside: polygon(100% 50%, 0% 100%, 0% 0%);
-// }
-
-// .Shape--diamond {
-//   -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-//           clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-//   -webkit-shape-outside: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-//           shape-outside: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-// }
