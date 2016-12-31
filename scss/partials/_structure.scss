@@ -43,7 +43,7 @@ ul { list-style: square; }
     text-align: center;
     font-size: 1.5rem; 
     line-height: 1.55;
-    margin: 75px auto;
+    margin: 0 auto;
   }
   .header-image {
     position: relative;
@@ -326,6 +326,15 @@ body.page-template-archive{
     #content{
       @include outer-container;
     }
+  }
+}
+
+/**********************
+* Forms
+**********************/
+.cfsFieldShell {
+  input, textarea {
+  box-shadow: none;
   }
 }
 

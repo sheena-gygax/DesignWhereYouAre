@@ -26,13 +26,15 @@ header.entry-header {
   margin: 0;
 }
 
-body, button, select, textarea {
-  font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+button, select, textarea {
+  font-family: $base-font-family;
   color: $text-dark;
 }
 
-input {
+input,
+textarea {
   font-family: $heading-font-family;
+  text-transform: uppercase;
 }
 
 .post-navigation .post-title { 

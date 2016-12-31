@@ -31,9 +31,9 @@ get_header(); ?>
 
       <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
+      <h2><?php the_title() ;?></h2>
 
       <section>
-        <h2><?php the_title() ;?></h2>
         <div><?php the_content(); ?></div>
       </section>
 
