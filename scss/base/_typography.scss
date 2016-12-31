@@ -10,19 +10,40 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6{
   font-family: $heading-font-family;
   font-size: modular-scale(1);
   line-height: $heading-line-height;
   margin: 0 0 $small-spacing;
 }
 
+h4 { 
+  font-size: 1em; 
+}
+
+header.entry-header {
+  text-align: left;
+  margin: 0;
+}
+
+body, button, select, textarea {
+  font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+  color: $text-dark;
+}
+
+input {
+  font-family: $heading-font-family;
+}
+
 .post-navigation .post-title { 
   font-family: $heading-font-family; 
-  color: $salty-dog;
-  &:hover{
-    color: $temple-star;
-  }
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+.post-navigation a:hover .post-title, 
+.post-navigation a:focus .post-title {
+  color: $foggy-day;
 }
 
 p {

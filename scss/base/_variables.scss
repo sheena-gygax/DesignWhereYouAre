@@ -10,12 +10,12 @@ $min-xlarge: 1600px;
 
 // Typography
 $base-font-family: Arial,Helvetica Neue,Helvetica,sans-serif;;
-$heading-font-family: $base-font-family;
-$text-dark: #43464B;
+$heading-font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+$text-dark: #1C1C1C;
 $grey-blue: #74877F;
 
 // Font Sizes
-$base-font-size: 1em;
+$base-font-size: 14px;
 
 // Line height
 $base-line-height: 1.5;
@@ -40,11 +40,12 @@ $sw: #c1785c;
 $salty-dog: #234058;
 $temple-star: #47626a;
 $water-scope: #bfd2c9;
+$white: #fff;
 
 
 // Font Colors
 $base-font-color: $dark-gray;
-$action-color: $blue;
+$action-color: $light-gray;
 
 // Border
 $base-border-color: $light-gray;
@@ -63,4 +64,4 @@ $base-duration: 150ms;
 $base-timing: ease;
 
 //Headers
-$h1: 3rem;
+$h1: 1.15em;

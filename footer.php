@@ -43,6 +43,10 @@
   </div><!-- .site-inner -->
 </div><!-- .site -->
 
+<?php if ( is_page_template( 'index.php' ) ) {
+    echo DISPLAY_ULTIMATE_PLUS();
+  }
+?>
 <?php wp_footer(); ?>
 </body>
 </html>

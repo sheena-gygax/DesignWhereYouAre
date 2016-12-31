@@ -18,7 +18,7 @@ get_header(); ?>
 
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      <?php /**bloginfo('description'); */ ?> 
+      <h6><?php bloginfo('description');  ?></h6>
 
       <?php get_template_part( 'template-parts/content', get_post_format() ); ?>
 
@@ -38,9 +38,7 @@ get_header(); ?>
       </section>
 
       <?php endwhile; else: ?>
-
-        <p>Sorry, there are no posts to display</p>
-
+        <!-- <p>Sorry, there are no posts to display</p> -->
       <?php endif; ?>
 
       <?php wp_reset_query(); ?>

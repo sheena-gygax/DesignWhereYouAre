@@ -5,34 +5,33 @@ body {
   .site {
     margin: 0;
   }
-  .site-content {
-    padding: 0;
-  }
   .site-inner {
     width: 100%;
     max-width: 100%;
-    min-height: 500px;
+    // min-height: 200px;
   }
 }
 
-h1,h2,h3,h4,h5,h6 { color: $foggy-day;}
+h1,h2,h3,h4,h5,h6 { color: $text-dark;}
 
-h1 {
+h1.entry-title {
   font-size: $h1;
 }
 
-a { color: $salty-dog; }
+a { color: $foggy-day; }
 
 .site-header {
+  background-color: $dark-gray;
+  font-size: 2rem;
+  text-align: center;
   padding: 0;
 }
 
-header {
-  font-size: 2rem;
-  text-align: center;
-}
-
 ul { list-style: square; }
+
+.site-main {
+  margin-bottom: 0;
+}
 
 /**********************
  * Home Page
@@ -40,6 +39,12 @@ ul { list-style: square; }
 
 .home {
   header{ position: relative; }
+  h6 { 
+    text-align: center;
+    font-size: 1.5rem; 
+    line-height: 1.55;
+    margin: 75px auto;
+  }
   .header-image {
     position: relative;
     overflow: hidden;
@@ -94,6 +99,7 @@ ul { list-style: square; }
   #main {
     @include outer-container;
     padding: 0 25px;
+    margin-bottom: 0;
     .entry-header {
       display: none;
     }
@@ -123,18 +129,67 @@ section.contact{
 * Interior Page
 **********************/
 .single-post{
-  main{
+  #main{
     @include outer-container;
+    padding-top: 25px;
+    section {
+      @include span-columns(6);
+    }
+    aside {
+      @include span-columns(3);
+    }
+  }
+
+  .post-navigation {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    float: left;
+    border-top: 1px solid $text-dark;
+    border-bottom: 1px solid $text-dark;
+    span { display: inline; }
+    a { padding: 0.85em 0; }
+    .nav-previous,
+    .nav-next{
+      float:left;
+      width: 50%;
+    }
+    .nav-next {
+      text-align: right;
+      padding-right: 35px;
+    }
+    .nav-previous {
+      padding-left: 35px;
+    }
+    div + div {
+      border: none;
+    }
+    .meta-nav {
+      text-indent: -9999px;
+      text-indent:  9999px;
+    }
   }
 }
 
 body.page {
   #content{
-    @include outer-container;
+    padding: 45px;
   }
   .content {
     @include span-columns(12);
     @include clearfix;
+  }
+  &.no-sidebar .entry-header{
+    margin: 0;
+  }
+  .entry-content{
+    .content-left {
+      @include span-columns(3);
+    }
+    .content-right {
+      @include span-columns(7);
+      @include omega();
+    }
   }
 }
 
@@ -149,11 +204,45 @@ body.no-sidebar{
 
 body.page-template-archive{
   #content{
-    @include outer-container;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    box-lines: multiple;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    padding-top: 5px;
   }
-  .content{
-    @include span-columns(12);
-    @include clearfix;
+  .post{
+    padding-right: 10px;
+  }
+  .entry {
+    img {
+      width: 250px;
+    }
+  }
+  h2{
+    font-size: $h1;
+    padding: 10px;
+    position: relative;
+    padding: 10px;
+    overflow: hidden;
+    a {
+      color: $text-dark;
+    }
   }
 }
 
@@ -161,6 +250,27 @@ body.page-template-archive{
   .tile {
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   }
+}
+
+.page-contact {
+  main {
+    @include span-columns(3);
+  }
+  .content-bottom-widgets {
+    @include span-columns(5);
+  }
+}
+
+/**********************
+* Social Media
+**********************/
+
+.sfsiplus_footerLnk{
+  display: none;
+}
+
+.home .sfsiplus_norm_row{
+  right: 0;
 }
 
 /**********************
@@ -176,29 +286,6 @@ body.page-template-archive{
 /**********************
 * Media Queries
 **********************/
-
-@include media(max-width $max-medium){
-  body.page-template-archive{
-    .post {
-      @include span-columns(4 of 12);
-      @include shift(1.25);
-      @include omega(2n);
-    }
-  }
-}
-
-@include media(min-width $min-medium){
-  .site-header-main{
-    height: 90px;
-  }
-
-  body.page-template-archive{
-    .post {
-      @include span-columns(4 of 12);
-      @include omega(3n);
-    }
-  }
-}
 
 
  @include media($max-small){
@@ -230,6 +317,14 @@ body.page-template-archive{
     .content { @include span-columns(8); }
     .post {
       @include span-columns(8);
+    }
+  }
+}
+
+@include media(min-width $min-large){
+  body.page {
+    #content{
+      @include outer-container;
     }
   }
 }

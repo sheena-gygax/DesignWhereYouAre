@@ -8,13 +8,16 @@ get_header(); ?>
 	<div id="content" role="main">
 
 		<?php
-			if ( is_page( 'residential' ) ) {    
-				query_posts('cat=5');
-			} elseif ( is_page( 'commercial' ) ) {   
-			    query_posts('cat=6');
-			} elseif ( is_page( 'hand-renderings' ) ) { 
-			    query_posts('cat=7');
-			} 
+			// if ( is_page( 'residential' ) ) {    
+			// 	query_posts('cat=5');
+			// } elseif ( is_page( 'commercial' ) ) {   
+			//     query_posts('cat=6');
+			// } elseif ( is_page( 'hand-renderings' ) ) { 
+			//     query_posts('cat=7');
+			// } 
+			if ( is_page( 'projects' ) ) {    
+				query_posts('cat=8');
+			}
 		?>
 
 		<?php if (have_posts()) : ?>
@@ -27,7 +30,9 @@ get_header(); ?>
 	    			</a>
 					<?php endif; ?>
 				</div>
-				<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h2>
+				<h2>
+					<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
+					<div class="corner-bottom-left"></div></h2>
 			</div>
 
 		<?php endwhile; ?>
