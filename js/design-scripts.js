@@ -22,15 +22,26 @@ jQuery(function($) {
 
 			$(menu).append(spans);
 			$(menu).find('i').remove();
+		},
+
+		shiftContent: function(){
+			var content = $.find('.single-post #main aside');
+			if ($(window).width() <= 978 && content.length > 0) {
+				$(content[0]).insertBefore('.single-post #main section');
+			} else {
+				$(content[0]).insertAfter('.single-post #main section');
+			}
 		}
 
 	}
 
 	$(window).on("debouncedresize", function(e){
 		designWhereYouAre.resizeMenu();
+		designWhereYouAre.shiftContent();
 	});
 
 	$(document).ready(function($) {
 		designWhereYouAre.alterHamburgerMenu();
+		designWhereYouAre.shiftContent();
 	});
 });

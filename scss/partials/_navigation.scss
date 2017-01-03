@@ -15,16 +15,18 @@ h1,h2,h3,h4,h5,h6,
   padding: 0.65625em 0;
 }
 
-.main-navigation a:after {
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background-color: $white;
-  content: "";
-  transition: width 0.2s;
+header{
+  .main-navigation a:after {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: $white;
+    content: "";
+    transition: width 0.2s;
+  }
 }
 
 .main-navigation li:hover > a,
@@ -73,10 +75,6 @@ h1,h2,h3,h4,h5,h6,
 .shiftnav {
   &:after {
     box-shadow: 0 0 15px rgba(0,0,0,0.2)!important;
-  }
-  &.shiftnav-skin-light {
-    background: #ffffff !important;
-    color: $text-dark !important;
   }
 }
 
