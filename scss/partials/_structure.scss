@@ -14,10 +14,10 @@ body {
 
 //non-scrolling home
 html .home, body .home {
-  height:100%;
-  margin:0;
-  padding:0;
-  overflow:hidden;
+  // height:100%;
+  // margin:0;
+  // padding:0;
+  // overflow:hidden;
   .no-sidebar .entry-footer{
     margin-top: 0;
     padding: 0;
@@ -42,7 +42,13 @@ a { color: $foggy-day; }
   padding: 0;
 }
 
-ul { list-style: square; }
+li:before{
+  content: "\f105";
+  font-family: 'FontAwesome';
+  float: left;
+  margin-left: -1.5em;
+  color: $dark-gray;
+}
 
 .site-main {
   margin-bottom: 0;
@@ -60,7 +66,7 @@ ul { list-style: square; }
   header{ position: relative; }
   h6 { 
     text-align: center;
-    font-size: 1.5rem; 
+    font-size: 1.15rem; 
     line-height: 1.55;
     margin: 0 auto;
   }
@@ -71,53 +77,11 @@ ul { list-style: square; }
     img {
       text-indent: -9999px;
     }
-    // .corner-bottom-left{
-    //   position: absolute;
-    //   left: 0;
-    //   bottom: 0;
-    //   width: 0;
-    //   height: 0;
-    //   border-style: solid;
-    //   border-width: 200vh 0 0 200vh;
-    //   border-color: transparent transparent transparent rgba($temple-star, .65);
-    // }
-    // .corner-top-left{
-    //   position: absolute;
-    //   left: 0;
-    //   top: 0;
-    //   width: 0;
-    //   height: 0;
-    //   border-style: solid;
-    //   border-width: 100vh 100vh 0 0;
-    //   opacity: 0;
-    //   border-color: rgba($water-scope, .65) transparent transparent;
-    // }
-    // .corner-top-right{
-    //   position: absolute;
-    //   right: 0;
-    //   top: 0;
-    //   width: 0;
-    //   height: 0;
-    //   opacity: 0;
-    //   border-style: solid;
-    //   border-width: 0 150vh 150vh 0;
-    //   border-color: transparent rgba($foxy, .65) transparent transparent;
-    // }
-    // .corner-bottom-right{
-    //   position: absolute;
-    //   right: 0;
-    //   bottom: 0;
-    //   width: 0;
-    //   height: 0;
-    //   border-style: solid;
-    //   border-width: 0 0 100vh 100vh;
-    //   border-color: transparent transparent rgba($sw,.65);
-    // }
   }
 
   #main {
     @include outer-container;
-    padding: 0 25px;
+    padding: 200px 25px 0;
     margin-bottom: 0;
     .entry-header {
       display: none;
@@ -128,21 +92,6 @@ ul { list-style: square; }
     }
   }
 }
-
-// section.contact{
-//   background-color: #d66253;
-//   min-height: 100px;
-//   width: 100%;
-//   padding: 25px 0;
-
-//   button {
-//     margin: 0 auto;
-//     display: block;
-//     background-color: #BB4030;
-//     color: #fff;
-//     outline:none;
-//   }
-// }
 
 /**********************
 * Interior Page
@@ -168,6 +117,7 @@ ul { list-style: square; }
     border-bottom: 1px solid $text-dark;
     span { display: inline; }
     a { padding: 0.85em 0; }
+    i { font-size: 16px; }
     .nav-previous,
     .nav-next{
       float:left;

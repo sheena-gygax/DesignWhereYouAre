@@ -33,10 +33,11 @@ get_header(); ?>
 				the_post_navigation( array(
 					'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( '', 'twentysixteen' ) . '</span> ' .
 						'<span class="screen-reader-text">' . __( 'Next post:', 'twentysixteen' ) . '</span> ' .
-						'<span class="post-title">%title</span> <i class="fw fa fa-chevron-right" aria-hidden="true"></i>',
-					'prev_text' => '<i class="fw fa fa-chevron-left" aria-hidden="true"></i><span class="meta-nav" aria-hidden="true">' . __( '', 'twentysixteen' ) . '</span> ' .
+						'<span class="post-title">%title</span> <i class="fw fa fa-angle-right" aria-hidden="true"></i>',
+					'prev_text' => '<i class="fw fa fa-angle-left" aria-hidden="true"></i><span class="meta-nav" aria-hidden="true">' . __( '', 'twentysixteen' ) . '</span> ' .
 						'<span class="screen-reader-text">' . __( 'Previous post:', 'twentysixteen' ) . '</span> ' .
 						'<span class="post-title">%title</span>',
+						'in_same_term'  => true,
 				) );
 			}
 

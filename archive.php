@@ -15,8 +15,12 @@ get_header(); ?>
 			// } elseif ( is_page( 'hand-renderings' ) ) { 
 			//     query_posts('cat=7');
 			// } 
+			$args = array(
+				'cat' => 8,
+				'order' => 'ASC'
+			);
 			if ( is_page( 'projects' ) ) {    
-				query_posts('cat=8');
+				query_posts($args);
 			}
 		?>
 

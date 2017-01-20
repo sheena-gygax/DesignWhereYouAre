@@ -10,7 +10,7 @@ $min-xlarge: 1600px;
 
 // Typography
 $base-font-family: 'Playfair Display', serif;
-$heading-font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+$heading-font-family: "lato",sans-serif;
 $text-dark: #1C1C1C;
 $grey-blue: #74877F;
 
@@ -29,7 +29,7 @@ $base-z-index: 0;
 
 // Colors
 $blue: #1565c0;
-$dark-gray: #333;
+$dark-gray: #686666;
 $medium-gray: #999;
 $light-gray: #ddd;
 
@@ -64,4 +64,4 @@ $base-duration: 150ms;
 $base-timing: ease;
 
 //Headers
-$h1: 1.15em;
+$h1: 1em;

@@ -14,6 +14,8 @@
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://use.typekit.net/jfw1zgh.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
   <link rel="profile" href="http://gmpg.org/xfn/11">
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"> 
   <?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
@@ -90,7 +92,7 @@
           $custom_header_sizes = apply_filters( 'twentysixteen_custom_header_sizes', '(max-width: 709px) 85vw, (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px' );
         ?>
         <div class="header-image">
-          <img style="background-image:url('<?php header_image(); ?>'); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; width: 100%; max-width: 100%; max-height: 100%; height: 28vw;"  sizes="<?php echo esc_attr( $custom_header_sizes ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+          <img style="background-image:url('<?php header_image(); ?>'); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; width: 100%; max-width: 100%; max-height: 100%; height: 20vw;"  sizes="<?php echo esc_attr( $custom_header_sizes ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 <!--           <div class="corner-bottom-left animated fadeInLeft"></div>
           <div class="corner-top-left animated fadeInLeft"></div>
           <div class="corner-top-right animated fadeInRight"></div>
