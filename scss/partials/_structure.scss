@@ -58,6 +58,11 @@ li:before{
   border-top: 0;
 }
 
+.custom-logo {
+  max-width: 95px;
+  padding: 10px 0;
+}
+
 /**********************
  * Home Page
  **********************/
@@ -77,11 +82,20 @@ li:before{
     img {
       text-indent: -9999px;
     }
+    &:before{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: rgba(0, 0, 0, .6);
+    }
   }
 
   #main {
     @include outer-container;
-    padding: 200px 25px 0;
+    padding: 150px 25px 0;
     margin-bottom: 0;
     .entry-header {
       display: none;
@@ -252,6 +266,33 @@ body.page-template-archive{
 }
 
 /**********************
+* Forms
+**********************/
+.cfsFieldShell {
+  input, textarea {
+  box-shadow: none;
+  }
+}
+
+/**********************
+* Social Nav
+**********************/
+
+.social-nav{
+  overflow: auto;
+  margin: 0 auto; 
+  li{
+    font-size: 1.15em;
+    float: left;
+    list-style: none;
+    padding-left: 10px;
+    &:before {
+      content: '';
+    }
+  }
+}
+
+/**********************
 * Media Queries
 **********************/
 
@@ -290,6 +331,16 @@ body.page-template-archive{
 }
 
 @include media(max-width $min-medium){
+  .site-branding {
+    position: absolute;
+    top: 6px;
+    z-index: 600000;
+    left: 10%;
+    img{
+      max-width: 50px;
+      padding: 0;
+    }
+  }
   body.page {
     .entry-content {
       .content-left,
@@ -325,6 +376,12 @@ body.page-template-archive{
     width: 100% !important;
   }
 
+  .social-nav{
+    width: 20%;
+    li { font-size: 0.9em; }
+    a { color: $white; }
+  }
+
   body,
   .site-footer{
     background-color: $temple-star;
@@ -335,7 +392,11 @@ body.page-template-archive{
     .main-navigation {
       width: 20%;
       li,ul {
+        list-style: none;
         border: 0;
+      }
+      li:before{
+        content: '';
       }
     }
   } 
@@ -346,14 +407,5 @@ body.page-template-archive{
     #content{
       @include outer-container;
     }
-  }
-}
-
-/**********************
-* Forms
-**********************/
-.cfsFieldShell {
-  input, textarea {
-  box-shadow: none;
   }
 }

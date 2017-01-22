@@ -31,6 +31,16 @@ jQuery(function($) {
 			} else {
 				$(content[0]).insertAfter('.single-post #main section');
 			}
+		},
+
+		mobileLogo: function(){
+			var mobileNav = $.find('.shiftnav-main-toggle-content');
+			var logo = $.find('.site-branding');
+			if ($(window).width() <= 978 && mobileNav.length > 0) {
+				$(mobileNav).append(logo);
+			} else {
+				$('.site-header-main').prepend(logo);
+			}
 		}
 
 	}
@@ -38,10 +48,12 @@ jQuery(function($) {
 	$(window).on("debouncedresize", function(e){
 		designWhereYouAre.resizeMenu();
 		designWhereYouAre.shiftContent();
+		designWhereYouAre.mobileLogo();
 	});
 
 	$(document).ready(function($) {
 		designWhereYouAre.alterHamburgerMenu();
 		designWhereYouAre.shiftContent();
+		designWhereYouAre.mobileLogo();
 	});
 });

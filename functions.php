@@ -23,7 +23,6 @@ function theme_scripts() {
   wp_enqueue_script( 'child-script', 
     get_stylesheet_directory_uri() . '/js/design-scripts.js',
     array( 'jquery'),
-    wp_get_theme()->get('Version'),
     true
   );
 

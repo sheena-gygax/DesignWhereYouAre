@@ -37,7 +37,6 @@ get_header(); ?>
 					'prev_text' => '<i class="fw fa fa-angle-left" aria-hidden="true"></i><span class="meta-nav" aria-hidden="true">' . __( '', 'twentysixteen' ) . '</span> ' .
 						'<span class="screen-reader-text">' . __( 'Previous post:', 'twentysixteen' ) . '</span> ' .
 						'<span class="post-title">%title</span>',
-						'in_same_term'  => true,
 				) );
 			}
 
