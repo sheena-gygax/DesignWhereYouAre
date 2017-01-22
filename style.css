@@ -427,16 +427,6 @@ body .site-inner {
   max-width: 100%;
 }
 
-/* line 21, scss/partials/_structure.scss */
-html .home .no-sidebar .entry-footer, body .home .no-sidebar .entry-footer {
-  margin-top: 0;
-  padding: 0;
-}
-/* line 25, scss/partials/_structure.scss */
-html .home .site-footer, body .home .site-footer {
-  padding-bottom: 0;
-}
-
 /* line 30, scss/partials/_structure.scss */
 h1, h2, h3, h4, h5, h6 {
   color: #1C1C1C;
