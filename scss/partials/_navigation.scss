@@ -68,6 +68,18 @@ header{
   }
 }
 
+@include media(min-width $min-medium){
+  header .site-header-main {
+    height: 50px;
+    position: relative;
+  }
+  #site-navigation{
+    position: absolute;
+    right: 0;
+    top: 15%;
+  }
+}
+
 /* -----------------------------------------------------------------------------
 
   ShiftNav
