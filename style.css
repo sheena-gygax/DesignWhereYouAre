@@ -986,7 +986,7 @@ body.page-template-archive h2 a {
   }
 
   /* line 407, scss/partials/_structure.scss */
-  body.page #content {
+  body.page:not(.page-template-archive) #content {
     padding: 80px 45px;
   }
 }

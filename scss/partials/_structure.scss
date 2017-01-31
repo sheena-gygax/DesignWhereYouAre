@@ -403,7 +403,7 @@ body.page-template-archive{
   .custom-logo {
     max-width: 100px;
   }
-  body.page {
+  body.page:not(.page-template-archive) {
     #content{
       padding: 80px 45px;
     }
