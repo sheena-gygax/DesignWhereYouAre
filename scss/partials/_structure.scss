@@ -403,6 +403,11 @@ body.page-template-archive{
   .custom-logo {
     max-width: 100px;
   }
+  body.page {
+    #content{
+      padding: 80px 45px;
+    }
+  }
 }
 
 @include media(min-width $min-large){

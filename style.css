@@ -984,9 +984,14 @@ body.page-template-archive h2 a {
   .custom-logo {
     max-width: 100px;
   }
+
+  /* line 407, scss/partials/_structure.scss */
+  body.page #content {
+    padding: 80px 45px;
+  }
 }
 @media screen and (min-width: 1200px) {
-  /* line 410, scss/partials/_structure.scss */
+  /* line 415, scss/partials/_structure.scss */
   body.page #content {
     max-width: 1200px;
     margin-left: auto;
