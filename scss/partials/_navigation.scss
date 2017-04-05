@@ -1,6 +1,11 @@
-h1,h2,h3,h4,h5,h6,
 .entry-title,
-.main-navigation {
+.main-navigation,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $heading-font-family;
   text-transform: uppercase;
 }
@@ -9,33 +14,69 @@ h1,h2,h3,h4,h5,h6,
   margin: 0 0.875em;
   line-height: 1em;
 }
-.main-navigation a {
-  font-size: 40%;
-  color: $white;
-  letter-spacing: 0.1rem;
-  padding: 0.65625em 0;
-}
 
-header{
-  .main-navigation a:after {
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 1px;
-    background-color: $white;
-    content: "";
-    transition: width 0.2s;
+.main-navigation {
+  li:before {
+    display: none;
+  }
+
+  a {
+    font-size: 75%;
+    color: #000;
+    letter-spacing: 0.1rem;
+    padding: 0.65625em 0;
   }
 }
 
-.main-navigation li:hover > a,
-.main-navigation li.focus > a,
-.main-navigation > a:hover,
-.main-navigation li.current_page_item a {
-  color: $white;
+.main-navigation {
+  li:first-child{
+    a:hover,
+    a:active,
+    &.current_page_item a,
+    .focus > a,
+    &:hover {
+      color:$brown;
+    }
+  }
+  li:nth-of-type(2){
+    a:hover,
+    a:active,
+    &.current_page_item a,
+    .focus > a,
+    &:hover {
+      color:$gold;
+    }
+  }
+  li:nth-of-type(3){
+    a:hover,
+    a:active,
+    &.current_page_item a,
+    .focus > a,
+    &:hover {
+      color:$dusty-rose;
+    }
+  }
+  li:nth-of-type(4){
+    a:hover,
+    a:active,
+    &.current_page_item a,
+    .focus > a,
+    &:hover {
+      color:$temple-star;
+    }
+  }
+  li:nth-of-type(5){
+    a:hover,
+    a:active,
+    &.current_page_item a,
+    .focus > a,
+    &:hover {
+      color:$light-blue;
+    }
+  }
+
 }
+
 .main-navigation .menu-item-has-children > a {
   padding-right: 0;
 }
@@ -45,41 +86,38 @@ header{
   background-color: transparent;
 }
 
-.main-navigation ul ul a,
 .main-navigation li.current_page_item ul a,
+.main-navigation ul ul a,
 .main-navigation ul ul a:hover {
   color: $text-dark;
 }
 
-.main-navigation .menu-item-has-children .sub-menu a:hover:after{
+.main-navigation .menu-item-has-children .sub-menu a:hover:after {
   background-color: transparent;
 }
 
 .main-navigation .current-menu-item a:after,
-.main-navigation a:hover:after,
-.main-navigation a:active:after  {
-  width:100%;
+.main-navigation a:active:after,
+.main-navigation a:hover:after {
+  width: 100%;
 }
-
-
-@media screen and (max-width: ($max-medium)){
+@media screen and (max-width: ($max-medium)) {
   .menu-toggle {
     display: none;
   }
 }
-
-@include media(min-width $min-medium){
+@include media(min-width $min-medium) {
   header .site-header-main {
-    height: 50px;
+    height: 100px;
     position: relative;
   }
-  #site-navigation{
+
+  #site-navigation {
     position: absolute;
     right: 0;
-    top: 15%;
+    top: 27%;
   }
 }
-
 /* -----------------------------------------------------------------------------
 
   ShiftNav
@@ -90,4 +128,3 @@ header{
     box-shadow: 0 0 15px rgba(0,0,0,0.2)!important;
   }
 }
-
