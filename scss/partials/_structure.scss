@@ -143,11 +143,14 @@ li:before {
 * Logo
 **********************/
 .custom-logo {
-  background: rgba(0, 0, 0, 0.8);
   max-width: 60%;
   padding: 10px;
   position: relative;
   z-index: 500005;
+}
+
+.home .custom-logo {
+  max-width: 95%;  
 }
 
 .custom-logo-link{
