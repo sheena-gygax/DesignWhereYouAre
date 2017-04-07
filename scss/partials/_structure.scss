@@ -1,8 +1,8 @@
 body {
   position: relative;
   margin: 0;
-  background: $dark-gray;
-  letter-spacing: 0.05em;
+  padding-top: 0 !important;
+  letter-spacing: 0.08em;
 
   .site {
     margin: 0;
@@ -20,11 +20,33 @@ h3,
 h4,
 h5,
 h6 {
-  color: $text-dark;
+  color: $brown;
+  font-weight: 300;
 }
 
 h1.entry-title {
+  display: none;;
   font-size: $h1;
+}
+
+.sans-serif-title {
+  font-family: $heading-font-family;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.sans-serif{
+  font-family: $heading-font-family;
+  font-weight: bold;
+}
+
+.bold { font-weight: bold; }
+.blue { color: $blue; }
+.brown {color: $brown; }
+
+.clear {
+  padding-top: 20px;
+  clear: both;
 }
 
 a {
@@ -38,16 +60,17 @@ a {
   padding: 0;
 }
 
-.site-branding {
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  z-index: 100;
-  margin: 0;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 0;
+.home {
+  .site-branding {
+    position: absolute;
+    bottom:10%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 100;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 li:before {
@@ -115,9 +138,25 @@ li:before {
     }
   }
 }
+
+/**********************
+* Logo
+**********************/
+.custom-logo {
+  background: rgba(0, 0, 0, 0.8);
+  max-width: 60%;
+  padding: 10px;
+  position: relative;
+  z-index: 500005;
+}
+
+.custom-logo-link{
+  text-align: left;
+}
 /**********************
 * Interior Page
 **********************/
+
 .single-post {
   #main {
     @include outer-container;
@@ -137,8 +176,11 @@ li:before {
     width: 100%;
     margin: 0 auto;
     float: left;
-    border-top: 1px solid $text-dark;
-    border-bottom: 1px solid $text-dark;
+    border: none;
+
+    .post-title {
+      display: none;
+    }
 
     span {
       display: inline;
@@ -179,7 +221,8 @@ li:before {
 }
 
 body.page {
-  #content {
+  #content,
+  .bottom {
     padding: 45px;
   }
 
@@ -275,6 +318,25 @@ body.page-template-archive {
   }
 }
 /**********************
+* Custom Layout: Service Page
+**********************/
+.page-template-service-layout {
+  .left{
+    float:left;
+    width: 60%;
+  }
+  .right{
+    float:right;
+    width: 40%;
+  }
+  .bottom{
+    h2{ display: inline;}
+    .left { padding-right: 20px;}
+    .left,
+    .right{ width: 50%; }
+  }
+}
+/**********************
 * Social Media
 **********************/
 .sfsiplus_footerLnk {
@@ -362,7 +424,9 @@ body.page-template-archive {
 
 @include media(max-width 780px){
   .site-branding {
-    top: 5%;
+    top: 40%;
+    height: 100%;
+    bottom: 0;
   }
 
   .custom-logo{
@@ -381,6 +445,7 @@ body.page-template-archive {
     left: 0;
     top: -20px;
     width: 100%;
+    padding-top: 65px;
   }
 
   body.page {
@@ -456,6 +521,13 @@ body.page-template-archive {
     }
   }
 }
+
+@include media(max-width 1070px){
+  .main-navigation .primary-menu > li {
+    margin: 0px 0.550em;
+  }
+}
+
 @include media(min-width $max-medium) {
   .site-header-menu {
     display: flex;
@@ -463,15 +535,17 @@ body.page-template-archive {
     flex-flow: row wrap;
   }
 
-  body.page:not(.page-template-archive) {
-    #content {
-      padding: 80px 45px;
-    }
-  }
+  // body.page:not(.page-template-archive) {
+  //   #content {
+  //     padding: 80px 45px;
+  //   }
+  // }
 }
+
 @include media(min-width $min-large) {
   body.page {
-    #content {
+    #content,
+    .bottom {
       @include outer-container;
     }
   }

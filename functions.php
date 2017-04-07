@@ -20,13 +20,13 @@ function my_home_category( $query ) {
 add_action( 'pre_get_posts', 'my_home_category' );
 
 function theme_scripts() {
-  wp_enqueue_script( 'child-script', 
+  wp_enqueue_script( 'child-script',
     get_stylesheet_directory_uri() . '/js/design-scripts.js',
     array( 'jquery'),
     true
   );
 
-   wp_enqueue_script( 'smartresize-script', 
+   wp_enqueue_script( 'smartresize-script',
     get_stylesheet_directory_uri() . '/js/jquery-smartresize.js',
     array( 'jquery'),
     true

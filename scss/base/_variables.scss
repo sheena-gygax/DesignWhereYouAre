@@ -23,17 +23,13 @@ $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 // Colors
+$black: #000;
 $blue: #1565c0;
 $dark-gray: #686666;
 $medium-gray: #999;
 $light-gray: #ddd;
-$eye-catching: #ddb835;
 $foggy-day: #666666;
-$foxy: #996666;
-$sw: #c1785c;
-$salty-dog: #234058;
 $temple-star: #47626a;
-$water-scope: #bfd2c9;
 $white: #fff;
 // new colors
 $brown: #9a867c;
@@ -43,7 +39,7 @@ $gold: #cead77;
 $dusty-rose: #9d797d;
 
 // Font Colors
-$base-font-color: $dark-gray;
+$base-font-color: $black;
 $action-color: $light-gray;
 // Border
 $base-border-color: $light-gray;

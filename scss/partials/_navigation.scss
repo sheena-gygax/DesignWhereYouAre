@@ -74,7 +74,11 @@ h6 {
       color:$light-blue;
     }
   }
+}
 
+//Addes hover state to Projects if you within in the projects
+.single-post .main-navigation li:nth-of-type(2) a {
+  color: $gold;
 }
 
 .main-navigation .menu-item-has-children > a {
@@ -101,6 +105,13 @@ h6 {
 .main-navigation a:hover:after {
   width: 100%;
 }
+
+
+.main-navigation .current-menu-item > a,
+.main-navigation .current-menu-ancestor > a {
+	font-weight: 500;
+}
+
 @media screen and (max-width: ($max-medium)) {
   .menu-toggle {
     display: none;

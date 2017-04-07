@@ -17,7 +17,7 @@
   <script src="https://use.typekit.net/jfw1zgh.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
   <link rel="profile" href="http://gmpg.org/xfn/11">
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
   <?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
   <?php endif; ?>
@@ -60,6 +60,23 @@
               </nav><!-- .social-navigation -->
             <?php endif; ?>
           </div><!-- .site-header-menu -->
+        <?php endif; ?>
+
+        <?php if (!is_front_page()) :?>
+          <div class="site-branding">
+          <?php twentysixteen_the_custom_logo(); ?>
+
+          <?php if ( is_front_page() && is_home() ) : ?>
+            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+          <?php else : ?>
+            <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+          <?php endif;
+
+          $description = get_bloginfo( 'description', 'display' );
+          if ( $description || is_customize_preview() ) : ?>
+            <p class="site-description"><?php echo $description; ?></p>
+          <?php endif; ?>
+        </div><!-- .site-branding -->
         <?php endif; ?>
 
       </div><!-- .site-header-main -->
