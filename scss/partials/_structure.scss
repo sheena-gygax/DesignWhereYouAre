@@ -40,10 +40,14 @@ a {
 
 .site-branding {
   position: absolute;
-  top: 0;
+  top: 25%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
   z-index: 100;
-  background-color: #686666;
-  padding: 5px;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0;
 }
 
 li:before {
@@ -79,7 +83,7 @@ li:before {
 
   .header-image {
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
     margin: 0;
 
     img {
@@ -352,21 +356,26 @@ body.page-template-archive {
   }
 
   .home #main {
-    padding: 50px 25px 0;
+    padding: 125px 25px 0;
+  }
+}
+
+@include media(max-width 780px){
+  .site-branding {
+    top: 5%;
+  }
+
+  .custom-logo{
+    max-width: 65%;
+  }
+}
+
+@include media($min-small, $max-medium){
+  .home #main {
+    padding-top: 285px;
   }
 }
 @include media(max-width $min-medium) {
-  .site-branding {
-    position: absolute;
-    top: 0;
-    z-index: 600000;
-
-    img {
-      max-width: 70px;
-      padding: 0;
-    }
-  }
-
   .home .header-image {
     position: absolute;
     left: 0;
@@ -452,10 +461,6 @@ body.page-template-archive {
     display: flex;
     justify-content: flex-end;
     flex-flow: row wrap;
-  }
-
-  .custom-logo {
-    max-width: 100px;
   }
 
   body.page:not(.page-template-archive) {

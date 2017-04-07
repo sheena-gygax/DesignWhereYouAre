@@ -30,21 +30,6 @@
 
     <header id="masthead" class="site-header" role="banner">
       <div class="site-header-main">
-        <div class="site-branding">
-          <?php twentysixteen_the_custom_logo(); ?>
-
-          <?php if ( is_front_page() && is_home() ) : ?>
-            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-          <?php else : ?>
-            <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-          <?php endif;
-
-          $description = get_bloginfo( 'description', 'display' );
-          if ( $description || is_customize_preview() ) : ?>
-            <p class="site-description"><?php echo $description; ?></p>
-          <?php endif; ?>
-        </div><!-- .site-branding -->
-
         <?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) ) : ?>
         <!-- set mobile toggle to display none in case decide to disable slideNav  -->
           <button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'twentysixteen' ); ?></button>
@@ -76,6 +61,7 @@
             <?php endif; ?>
           </div><!-- .site-header-menu -->
         <?php endif; ?>
+
       </div><!-- .site-header-main -->
 
       <?php if ( get_header_image() && is_front_page() ) : ?>
@@ -92,6 +78,20 @@
           $custom_header_sizes = apply_filters( 'twentysixteen_custom_header_sizes', '(max-width: 709px) 85vw, (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px' );
         ?>
         <div class="header-image">
+          <div class="site-branding">
+            <?php twentysixteen_the_custom_logo(); ?>
+
+            <?php if ( is_front_page() && is_home() ) : ?>
+              <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+            <?php else : ?>
+              <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+            <?php endif;
+
+            $description = get_bloginfo( 'description', 'display' );
+            if ( $description || is_customize_preview() ) : ?>
+              <p class="site-description"><?php echo $description; ?></p>
+            <?php endif; ?>
+          </div><!-- .site-branding -->
           <img style="background-image:url('<?php header_image(); ?>'); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; width: 100%; max-width: 100%; max-height: 100%; height: 29vw;"  sizes="<?php echo esc_attr( $custom_header_sizes ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
         </div><!-- .header-image -->
       <?php endif; // End header image check. ?>
