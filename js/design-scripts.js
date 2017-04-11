@@ -33,27 +33,36 @@ jQuery(function($) {
 			}
 		},
 
-		// mobileLogo: function() {
-		// 	var mobileNav = $.find('.shiftnav-main-toggle-content');
-		// 	var logo = $.find('.site-branding');
-		// 	if ($(window).width() <= 978 && mobileNav.length > 0) {
-		// 		$(mobileNav).append(logo);
-		// 	} else {
-		// 		$('.site-header-main').prepend(logo);
-		// 	}
-		// }
+		isHome: function() {
+			if ($('body').hasClass('home')) {
+				return true;
+			}
+		},
+
+		mobileLogo: function() {
+			var home = $('body').hasClass('home');
+			var mobileNav = $.find('.shiftnav-main-toggle-content');
+			var logo = $.find('.site-branding');
+			if (!this.isHome()) {
+				if ($(window).width() <= 978 && mobileNav.length > 0) {
+					$(mobileNav).append(logo);
+				} else {
+					$('.site-header-main').prepend(logo);
+				}
+			}
+		}
 
 	}
 
 	$(window).on("debouncedresize", function(e) {
 		designWhereYouAre.resizeMenu();
 		designWhereYouAre.shiftContent();
-		// designWhereYouAre.mobileLogo();
+		designWhereYouAre.mobileLogo();
 	});
 
 	$(document).ready(function($) {
 		designWhereYouAre.alterHamburgerMenu();
 		designWhereYouAre.shiftContent();
-		// designWhereYouAre.mobileLogo();
+		designWhereYouAre.mobileLogo();
 	});
 });
