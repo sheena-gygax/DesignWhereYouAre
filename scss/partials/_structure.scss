@@ -20,7 +20,6 @@ h3,
 h4,
 h5,
 h6 {
-  color: $brown;
   font-weight: 300;
 }
 
@@ -245,7 +244,7 @@ li:before {
 body.page {
   #content,
   .bottom {
-    padding: 45px;
+    padding: 15px 45px;
   }
 
   .content {
@@ -314,8 +313,8 @@ body.page-template-archive {
   }
 
   h2 {
-    font-size: $h1;
-    padding: 10px;
+    font-size: 1.333em;
+    padding: 10px 0;
     position: relative;
     padding: 10px;
     overflow: hidden;
@@ -397,7 +396,7 @@ body.page-template-archive {
     float: left;
     list-style: none;
     padding-left: 10px;
-    a{color: $brown;}
+    a{color: $dark-gray;}
 
     &:before {
       content: '';
@@ -448,7 +447,7 @@ body.page-template-archive {
 
 @include media($min-small, $max-medium){
   .home #main {
-    padding-top: 285px;
+    padding-top: 115px;
   }
 }
 @include media(max-width $min-medium) {
@@ -547,10 +546,10 @@ body.page-template-archive {
 @include media(min-width 780px){
   .home{
     .site-branding{
-      top: 40%;
+      top: 10%;
       svg{
-        width:165px;
-        height: 165px;
+        width: 300px;
+        height: 300px;
       }
     }
   }
@@ -572,11 +571,11 @@ body.page-template-archive {
   .page-template-service-layout {
     .left{
       float:left;
-      width: 60%;
+      width: 65%;
     }
     .right{
       float:right;
-      width: 40%;
+      width: 35%;
     }
     .bottom{
       h2{ display: inline;}
@@ -590,7 +589,7 @@ body.page-template-archive {
 @include media(min-width $min-large) {
   .home{
     .site-branding{
-      top: 55%;
+      top: 10%;
     }
   }
 

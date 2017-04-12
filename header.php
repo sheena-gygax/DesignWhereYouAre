@@ -175,7 +175,7 @@
             <!-- php the_custom_logo(); -->
 
             <!-- <img src="/wp-content/uploads/2017/04/Design-Where-You-Are-LOGO-FINAL.svg" alt=""> -->
-            <svg viewBox="0 0 250 275">
+            <svg viewBox="0 0 275 265">
             <g class='svg-logo'>
             	<path fill="#fff" display="inline" d="M0.9,62.7L0,264.8l125.9,0l123.3,0.2l-0.5-202.3l-124.5-0.2v1.3l123.3,0.2l-1.4,197L5.5,259.3L5.6,63.6
             		c0,0,107.3-56.2,117-61.8V0L0.9,62.7z"/>
