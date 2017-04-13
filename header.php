@@ -172,9 +172,6 @@
         ?>
         <div class="header-image">
           <div class="site-branding">
-            <!-- php the_custom_logo(); -->
-
-            <!-- <img src="/wp-content/uploads/2017/04/Design-Where-You-Are-LOGO-FINAL.svg" alt=""> -->
             <svg viewBox="0 0 275 265">
             <g class='svg-logo'>
             	<path fill="#fff" display="inline" d="M0.9,62.7L0,264.8l125.9,0l123.3,0.2l-0.5-202.3l-124.5-0.2v1.3l123.3,0.2l-1.4,197L5.5,259.3L5.6,63.6
@@ -263,7 +260,8 @@
               <p class="site-description"><?php echo $description; ?></p>
             <?php endif; ?>
           </div><!-- .site-branding -->
-          <img style="background-image:url('<?php header_image(); ?>'); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; width: 100%; max-width: 100%; max-height: 100%; height: 29vw;"  sizes="<?php echo esc_attr( $custom_header_sizes ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+          <!-- <img style="background-image:url('<?php header_image(); ?>'); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; width: 100%; max-width: 100%; max-height: 100%; height: 29vw;"  sizes="<?php echo esc_attr( $custom_header_sizes ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"> -->
+          <img style="background-image:url('<?php header_image(); ?>'); "  sizes="<?php echo esc_attr( $custom_header_sizes ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
         </div><!-- .header-image -->
       <?php endif; // End header image check. ?>
     </header><!-- .site-header -->
