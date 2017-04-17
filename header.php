@@ -64,7 +64,7 @@
 
         <?php if (!is_front_page()) :?>
           <div class="site-branding">
-          <!-- twentysixteen_the_custom_logo(); -->
+          <a href='/'>
           <svg class='svg-logo' viewBox="0 0 315 225">
           <g>
           	<path display="inline" d="M0.9,62.7L0,264.8l125.9,0l123.3,0.2l-0.5-202.3l-124.5-0.2v1.3l123.3,0.2l-1.4,197L5.5,259.3L5.6,63.6
@@ -141,6 +141,7 @@
           	</g>
           </g>
         </svg>
+      </a>
 
           <?php if ( is_front_page() && is_home() ) : ?>
             <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -172,7 +173,7 @@
         ?>
         <div class="header-image">
           <div class="site-branding">
-            <svg viewBox="0 0 275 265">
+            <svg viewBox="0 0 250 265">
             <g class='svg-logo'>
             	<path fill="#fff" display="inline" d="M0.9,62.7L0,264.8l125.9,0l123.3,0.2l-0.5-202.3l-124.5-0.2v1.3l123.3,0.2l-1.4,197L5.5,259.3L5.6,63.6
             		c0,0,107.3-56.2,117-61.8V0L0.9,62.7z"/>
