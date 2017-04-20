@@ -17,8 +17,8 @@ h6{
   margin: 0 0 $small-spacing;
 }
 
-h4 { 
-  font-size: 1em; 
+h4 {
+  font-size: 1em;
 }
 
 header.entry-header {
@@ -37,13 +37,13 @@ textarea {
   text-transform: uppercase;
 }
 
-.post-navigation .post-title { 
-  font-family: $heading-font-family; 
+.post-navigation .post-title {
+  font-family: $heading-font-family;
   text-transform: uppercase;
   font-size: 1em;
 }
 
-.post-navigation a:hover .post-title, 
+.post-navigation a:hover .post-title,
 .post-navigation a:focus .post-title {
   color: $foggy-day;
 }

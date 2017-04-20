@@ -54,5 +54,4 @@ function custom_thumbnail() {
 add_action( 'after_setup_theme', 'custom_thumbnail' );
 
 add_filter('show_admin_bar', '__return_false');
-
 ?>
