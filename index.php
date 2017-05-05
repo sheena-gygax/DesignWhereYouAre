@@ -18,7 +18,7 @@ get_header(); ?>
 
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      <h6><?php bloginfo('description');  ?></h6>
+      <h1><?php bloginfo('description');  ?></h1>
 
       <?php get_template_part( 'template-parts/content', get_post_format() ); ?>
 
