@@ -14,6 +14,7 @@
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="TzL3gyFPYNjAhRgin9w6bqp2sGVWrHiOw1M-6OWlYfI" />
   <script src="https://use.typekit.net/jfw1zgh.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
   <link rel="profile" href="http://gmpg.org/xfn/11">
