@@ -155,7 +155,7 @@ li:before {
 
   #main {
     @include outer-container;
-    padding: 150px 25px 0;
+    padding: 50px 25px 25px;
     margin-bottom: 0;
 
     .entry-header {
@@ -164,6 +164,7 @@ li:before {
 
     h1 {
       text-align: center;
+      padding:10px 0;
     }
   }
 }
@@ -288,8 +289,9 @@ body.no-sidebar {
   }
 }
 
-body.page-template-archive {
-  #content {
+body.page-template-archive,
+body.page-current-projects {
+  #content{
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flexbox;
@@ -313,25 +315,69 @@ body.page-template-archive {
     padding-top: 5px;
   }
 
-  .post {
+  .gallery {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    box-lines: multiple;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    padding: 15px 45px;
+
+  }
+
+  .post,
+  .gallery-item {
     padding-right: 10px;
   }
 
-  .entry {
+  .entry,
+  .gallery-item {
     img {
       width: 250px;
+      height: 250px;
     }
   }
 
-  h2 {
+  .gallery-item {
+    display: block;
+    max-width: 250px;
+    padding: 0;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  h2,
+  .gallery-caption {
     font-size: 1.333em;
     padding: 10px 0;
     position: relative;
     overflow: hidden;
-
     a {
       color: $text-dark;
     }
+  }
+  .gallery-caption {
+    font-style: none;
+    font-family: "lato", sans-serif;
+    text-transform: uppercase;
+    color: $text-dark;
+    font-style: normal;
+    font-weight: 300;
   }
 }
 
@@ -539,6 +585,10 @@ body.page-template-archive {
     padding: 1em 1.7923% 1.75em;
     font-size: 18px;
 
+    .dropdown-toggle{
+      display: none;
+    }
+
     .main-navigation {
       width: 20%;
 
@@ -563,7 +613,8 @@ body.page-template-archive {
 
 @include media(max-width $max-medium){
   .home {
-    h6 { color: $white; }
+    h1,
+    article { color: $white; }
 
     .header-image{
       position: relative;
@@ -619,6 +670,9 @@ body.page-template-archive {
         height: 29vw;
         display: block;
       }
+    }
+    article {
+      padding: 5px 25px;
     }
   }
 

@@ -20,37 +20,11 @@ get_header(); ?>
     <main id="main" class="site-main" role="main">
       <h1><?php bloginfo('description');  ?></h1>
 
-      <?php get_template_part( 'template-parts/content', get_post_format() ); ?>
-
-      <?php
-        $args = array(
-         'cat' => '4'
-        );
-        $the_query = new WP_Query( $args );
-      ?>
-
-      <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
-      <h2><?php the_title() ;?></h2>
-
-      <section>
-        <div><?php the_content(); ?></div>
-      </section>
-
-      <?php endwhile; else: ?>
-        <!-- <p>Sorry, there are no posts to display</p> -->
-      <?php endif; ?>
-
-      <?php wp_reset_query(); ?>
-
-
-
+      <?php while ( have_posts() ) : the_post();
+  				get_template_part( 'template-parts/content', get_post_format() );
+      endwhile; ?>
 
     </main><!-- .site-main -->
-
-<!--   <section class="contact">
-    <button class="ripple">Contact</button>
-  </section> -->
   </div><!-- .content-area -->
 
 <?php get_sidebar(); ?>
