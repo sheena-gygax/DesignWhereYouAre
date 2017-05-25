@@ -35,6 +35,7 @@ h1.entry-title {
 }
 
 .inline-content {
+  margin: 0 0 1.25em;
   h1,h2,h3,h4 {
     font-family: $heading-font-family;
     text-transform: uppercase;
@@ -42,6 +43,15 @@ h1.entry-title {
   }
   p { display: inline; }
 }
+
+.home .inline-content {
+  margin: 0 0 0.75em;
+  h2 {
+    font-size: 1.333em;
+    font-weight: 300;
+  }
+}
+
 
 .sans-serif{
   font-family: $heading-font-family;
@@ -56,10 +66,6 @@ h1.entry-title {
 .clear {
   padding-top: 20px;
   clear: both;
-}
-
-a {
-  color: $foggy-day;
 }
 
 .site-header {
@@ -418,6 +424,13 @@ body.page-current-projects {
     .right{ width: 100%; }
   }
 }
+
+//specific to service page
+.page-services{
+  .brown {
+    margin-top: 2.15em;
+  }
+}
 /**********************
 * Social Media
 **********************/
@@ -449,8 +462,11 @@ body.page-current-projects {
 * Social Nav
 **********************/
 .social-nav {
-  overflow: auto;
-  margin: 0 auto;
+  // overflow: auto;
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   li {
     font-size: 2em;
@@ -463,6 +479,16 @@ body.page-current-projects {
       content: '';
     }
   }
+}
+
+.copy-right {
+  font-family: $heading-font-family;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 20px 0;
+  width: 100%;
+  text-align: center;
+  font-size: 85%;
 }
 /**********************
 * Media Queries
@@ -565,7 +591,9 @@ body.page-current-projects {
   }
 
   .social-nav {
-    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     li {
       font-size:1.5em;
@@ -589,8 +617,18 @@ body.page-current-projects {
       display: none;
     }
 
+    .copy-right {
+      color: $white;
+      font-size: 65%;
+    }
+
     .main-navigation {
       width: 20%;
+
+      a {
+        font-size: 60%;
+        line-height: .25;
+      }
 
       li,
       ul {
@@ -615,6 +653,8 @@ body.page-current-projects {
   .home {
     h1,
     article { color: $white; }
+
+    a { color: $light-blue; }
 
     .header-image{
       position: relative;

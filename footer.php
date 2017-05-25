@@ -15,6 +15,7 @@
     <footer id="colophon" class="site-footer" role="contentinfo">
       <?php get_template_part('social-nav') ?>
       <?php if ( has_nav_menu( 'primary' ) ) : ?>
+        <div class='copy-right'>All Rights Reserved © <?php echo date("Y"); ?> | Design Where You Are | Bend, Oregon | (509) 341-4797 </div>
         <nav class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Primary Menu', 'twentysixteen' ); ?>">
           <?php
             wp_nav_menu( array(
