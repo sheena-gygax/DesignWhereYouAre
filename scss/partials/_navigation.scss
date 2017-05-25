@@ -26,6 +26,11 @@ h6 {
     color: #000;
     letter-spacing: 0.1rem;
     padding: 0.65625em 0;
+    &:active,
+    &:focus,
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 
